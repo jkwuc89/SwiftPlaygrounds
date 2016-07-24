@@ -48,6 +48,26 @@ var aString = "Hello once more"
 // aString = aString + anotherInt
 // aString = aString + String(anotherInt)
 
+// String interpolation
+let name = "Keith"
+var composedString = "Hello \(name)"
+composedString = "anotherInt = \(anotherInt)"
+
+// Tuples group multiple values using any value type
+let http404Error = (statusCode: 404, statusMsg: "Not Found")
+let (statusCode, statusMsg) = http404Error
+print(statusCode)
+print(statusMsg)
+http404Error.0
+http404Error.1
+http404Error.statusCode
+http404Error.statusMsg
+
+// Type aliases
+typealias MyString = String
+var myStringVar: MyString
+myStringVar = "A type alias"
+
 //-------------------------------------------------------------------
 // Operators
 //-------------------------------------------------------------------
@@ -70,3 +90,21 @@ a % b
 b = -a
 b = +b // Unary plus does nothing
 
+// Comparison
+a == b
+a != b
+a < b
+a > b
+a > b ? "a greater than b" : "a less than b"
+
+// Logical
+let aBool = true
+let bBool = false
+aBool && bBool
+aBool || bBool
+!bBool
+
+// Nil-Coalescing
+var optionalInt: Int?
+let defaultValue = 10
+optionalInt ?? defaultValue
