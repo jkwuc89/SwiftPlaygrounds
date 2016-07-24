@@ -1,4 +1,5 @@
 // A Swift Introduction to Swift Playground
+// Variables, Constants, Types and Operators
 
 import UIKit
 
@@ -18,7 +19,8 @@ aVariable = "Hello again"
 // aVariable = 1
 
 // Variables can contain just about any valid Unicode character
-let 😀 = "smiley"
+let 🍺 = "beer"
+print("\(🍺) is good");
 
 //-------------------------------------------------------------------
 // Types
