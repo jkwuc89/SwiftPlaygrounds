@@ -88,6 +88,11 @@ a * b
 b / a
 a % b
 
+// Increment and decrement removed in Swift 3
+var i = 1
+// i++
+// i--
+
 // Unary
 b = -a
 b = +b // Unary plus does nothing
