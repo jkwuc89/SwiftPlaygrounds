@@ -9,12 +9,12 @@ print("Hello World")
 //-------------------------------------------------------------------
 // Variables and Constants
 //-------------------------------------------------------------------
-// Constants are "set in stone"
+// Constants are immutable
 let aConstant = 1
 print(aConstant.dynamicType)
 // aConstant = 2
 
-// Variables can change
+// Variables are mutable
 var aVariable = "Hello World"
 print(aVariable.dynamicType)
 aVariable = "Hello again"
@@ -26,19 +26,22 @@ let 🍺 = "beer"
 print("\(🍺) is good");
 
 //-------------------------------------------------------------------
-// Types
+// Types - Inferred unless explicitly declared
 //-------------------------------------------------------------------
 // Int: Int32 on 32-bit platforms, Int64 on 64-bit platforms
 let anInt: Int
 let anotherInt = 10
 
 // Float and Double, Apple recommends using Double for better precision
-let aFloat: Float = 86.123456789
-let aDouble: Double = 86.123456789
-let anotherDouble = 86.987654321
+let aFloat: Float = 0.123456789
+let aDouble: Double = 0.123456789
+let anotherDouble = 0.123456789
 print(anotherDouble.dynamicType)
 
-// Bool is true or false. No implied 1 or 0 value.
+// No implied numeber conversions
+// let sum = anInt + aDouble
+
+// Bool is true or false.
 var aBoolean = true
 aBoolean = false
 // aBoolean = 1
@@ -58,6 +61,13 @@ aString = aString + String(anotherInt)
 let name = "Keith"
 var composedString = "Hello \(name)"
 composedString = "anotherInt = \(anotherInt)"
+
+// String access
+// See https://developer.apple.com/reference/swift/string
+for char in name.characters {
+    print(char)
+}
+name.characters.count
 
 // Tuples group multiple values using any value type
 let http404Error = (statusCode: 404, statusMsg: "Not Found")

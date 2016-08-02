@@ -21,14 +21,30 @@ if let name = optionalName {
     greeting = "Hello, \(name)"
 }
 
+// Optional chaining
+class Residence {
+    var numberOfRooms = 5
+}
+class Person {
+    var residence: Residence?
+}
+var person = Person()
+// person.residence = Residence()
+if let roomCount = person.residence?.numberOfRooms {
+    print("Number of room: \(roomCount)")
+} else {
+    print("Can't determine number of rooms")
+}
+
 //-------------------------------------------------------------------
 // for in loops
 //-------------------------------------------------------------------
-// Using ranges
+// Inclusive range
 for index in 1...5 {
     print("\(index) times 5 = \(index * 5)")
 }
 
+// Exclusive range
 for index in 1..<5 {
     print("\(index) times 5 = \(index * 5)")
 }
