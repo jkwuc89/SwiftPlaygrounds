@@ -24,14 +24,18 @@ if let name = optionalName {
 //-------------------------------------------------------------------
 // for in loops
 //-------------------------------------------------------------------
-// Using range
+// Using ranges
 for index in 1...5 {
+    print("\(index) times 5 = \(index * 5)")
+}
+
+for index in 1..<5 {
     print("\(index) times 5 = \(index * 5)")
 }
 
 // If loop value is not needed
 var str: String = ""
-for _ in 1 ... 5 {
+for _ in 1...5 {
     str += " fake"
 }
 print(str)

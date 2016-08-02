@@ -71,37 +71,37 @@ printMathResult(add, 5, 10)
 //-------------------------------------------------------------------
 // Closures
 //-------------------------------------------------------------------
-let beers = [
+var beers = [
     "Bodhi", "Creeper", "BitterEx", "Lake Erie Monster", "Guinness"
 ]
 
 // Long form with argument names and types, return type
-var reversed = beers.sorted(isOrderedBefore: {
+beers.sort(by: {
     (s1: String, s2: String) -> Bool in return s1 > s2
 })
 
 // Eliminate types which can be inferred
-reversed = beers.sorted(isOrderedBefore: {
+beers.sort(by: {
     s1, s2 in return s1 > s2
 })
 
 // Use implicit
-reversed = beers.sorted(isOrderedBefore: {
+beers.sort(by: {
     s1, s2 in s1 > s2
 })
 
 // Use shorthand argument names
-reversed = beers.sorted(isOrderedBefore: {
+beers.sort(by: {
     $0 > $1
 })
 
 // Using trailing closer syntax
-reversed = beers.sorted() {
+beers.sort() {
     $0 > $1
 }
 
 // If closure is only argument, eliminate the parens
-reversed = beers.sorted {
+beers.sort {
     $0 > $1
 }
 

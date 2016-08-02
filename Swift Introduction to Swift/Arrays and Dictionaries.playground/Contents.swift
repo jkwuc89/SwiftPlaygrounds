@@ -21,9 +21,14 @@ var floatArray: [Float] = [1.1, 2.2, 3.3]
 // Create an array with a default value
 var intArray = Array(repeating: 0, count: 5)
 
+// Create an immutable array
+let numbers = [1, 2, 3, 4, 5]
+// numbers.append(6)
+
 // Add arrays together to create another
 var anotherIntArray = Array(repeating: 1, count: 5)
 var combinedArray = intArray + anotherIntArray
+// Cannot mix types when combining arrays
 // var badCombinedArray = intArray + stringArray
 
 // Accessing and modifying an array
