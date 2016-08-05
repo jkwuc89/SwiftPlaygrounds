@@ -66,10 +66,8 @@ func printMathResult(_ mathFunction: (Int, Int) -> Int, _ a: Int, _ b: Int) {
 }
 printMathResult(add, 5, 10)
 
-// Exercise: Implement nested function
-
 //-------------------------------------------------------------------
-// Closures
+// Closures (all functions are closuers)
 //-------------------------------------------------------------------
 var beers = [
     "Bodhi", "Creeper", "BitterEx", "Lake Erie Monster", "Guinness"
