@@ -4,7 +4,7 @@
 import UIKit
 
 // The obligatory Hello World
-print("Hello World")
+print("Hello World!")
 
 //-------------------------------------------------------------------
 // Variables and Constants
@@ -29,7 +29,7 @@ print("\(🍺) is good");
 // Types - Inferred unless explicitly declared
 //-------------------------------------------------------------------
 // Int: Int32 on 32-bit platforms, Int64 on 64-bit platforms
-let anInt: Int
+var anInt: Int = 11
 let anotherInt = 10
 
 // Float and Double, Apple recommends using Double for better precision
@@ -39,7 +39,7 @@ let anotherDouble = 0.123456789
 print(anotherDouble.dynamicType)
 
 // No implied numeber conversions
-// let sum = anInt + aDouble
+let sum = Double(anInt) + aDouble
 
 // Bool is true or false.
 var aBoolean = true
@@ -126,6 +126,6 @@ aBool || bBool
 !bBool
 
 // Nil-Coalescing for optionals
-var optionalInt: Int?
+var optionalInt: Int? = 11
 let defaultValue = 10
 optionalInt ?? defaultValue

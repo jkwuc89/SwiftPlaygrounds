@@ -1,7 +1,9 @@
 // A Swift Introduction to Swift Playground
 // Error Handling
-// Does not involve unwinding the call stack, a process that can be expensive.
-// The performance of a throw statement are comparable to a return statement.
+// Does not involve unwinding the call stack,
+// a process that can be expensive.
+// The performance of a throw statement are comparable
+// to a return statement.
 
 import UIKit
 

@@ -6,16 +6,17 @@ import UIKit
 //-------------------------------------------------------------------
 // Conditionals
 //-------------------------------------------------------------------
-var temperatureInFahrenheit = 100
+var temperatureInFahrenheit = 31
 if temperatureInFahrenheit <= 32 {
     print("Water freezing")
-} else if temperatureInFahrenheit > 32 && temperatureInFahrenheit < 212 {
+} else if temperatureInFahrenheit > 32 &&
+    temperatureInFahrenheit < 212 {
     print("Water is liquid")
 } else {
     print("Water is boiling")
 }
 
-var optionalName: String? = nil
+var optionalName: String? = "Name"
 var greeting = "Hello!"
 if let name = optionalName {
     greeting = "Hello, \(name)"
@@ -29,7 +30,7 @@ class Person {
     var residence: Residence?
 }
 var person = Person()
-// person.residence = Residence()
+person.residence = Residence()
 if let roomCount = person.residence?.numberOfRooms {
     print("Number of room: \(roomCount)")
 } else {
@@ -129,7 +130,7 @@ default:
 }
 
 // Use value binding in case
-let anotherPoint = (0, 2)
+let anotherPoint = (2, 2)
 switch anotherPoint {
 case (let x, 0):
     print("x is set to \(x) because 2nd value is 0")
