@@ -11,12 +11,12 @@ print("Hello World!")
 //-------------------------------------------------------------------
 // Constants are immutable
 let aConstant = 1
-print(aConstant.dynamicType)
+print(type(of: aConstant))
 // aConstant = 2
 
 // Variables are mutable
 var aVariable = "Hello World"
-print(aVariable.dynamicType)
+print(type(of: aVariable))
 aVariable = "Hello again"
 // But they cannot change their type
 // aVariable = 1
@@ -36,7 +36,7 @@ let anotherInt = 10
 let aFloat: Float = 0.123456789
 let aDouble: Double = 0.123456789
 let anotherDouble = 0.123456789
-print(anotherDouble.dynamicType)
+print(type(of: anotherDouble))
 
 // No implied numeber conversions
 let sum = Double(anInt) + aDouble
@@ -49,7 +49,7 @@ aBoolean = false
 // Character type must be specified in declaration
 // Otherwise, String type is inferred
 var aChar: Character = "C"
-print(aChar.dynamicType)
+print(type(of: aChar))
 // aChar = "Cannot assign to string"
 
 // String
