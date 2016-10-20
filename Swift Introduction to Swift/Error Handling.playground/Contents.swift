@@ -21,24 +21,25 @@ func exists(_: String) -> Bool {
     return true
 }
 
-func readFile(filename: String) throws -> String {
+func readFile(filename: String) throws -> Data? {
     guard exists(filename) else {
         // Executed file file does not exist
         throw FileError.doesNotExist
     }
     
-    let file = open(filename)
-    let data = read(file)
-    return data;
-    
     // Executed last before readFile returns
     defer {
-        close(file)
+        file?.closeFile()
     }
+    
+    let file = FileHandle(forReadingAtPath: filename)
+    let data = file?.readDataToEndOfFile()
+    
+    return data;
 }
 
 let filename = "data.txt"
-var data: String
+var data: Data?
 do {
     try data = readFile(filename: filename)
 } catch FileError.doesNotExist {

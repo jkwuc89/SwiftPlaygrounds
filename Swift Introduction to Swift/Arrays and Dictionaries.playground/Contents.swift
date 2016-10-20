@@ -10,7 +10,7 @@ import UIKit
 
 // Create an empty array
 var stringArray = [String]()
-print(stringArray.dynamicType)
+print(type(of: stringArray))
 stringArray.append("String #1")
 print(stringArray)
 
@@ -59,7 +59,7 @@ namesOfNumbers[8] = "Eight"
 namesOfNumbers[10] = "Ten"
 namesOfNumbers
 namesOfNumbers.count
-print(namesOfNumbers.dynamicType)
+print(type(of: namesOfNumbers))
 
 // Create a dictionary with literals
 var airports = [
