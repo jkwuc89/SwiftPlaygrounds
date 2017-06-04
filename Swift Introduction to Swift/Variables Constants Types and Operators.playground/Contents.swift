@@ -33,13 +33,14 @@ var anInt: Int = 11
 let anotherInt = 10
 
 // Float and Double, Apple recommends using Double for better precision
-let aFloat: Float = 0.123456789
-let aDouble: Double = 0.123456789
+var aFloat: Float = 0.123456789
+var aDouble: Double = 0.12345678901234567890
 let anotherDouble = 0.123456789
 print(type(of: anotherDouble))
 
-// No implied numeber conversions
+// No implied number conversions
 let sum = Double(anInt) + aDouble
+print(type(of: sum))
 
 // Bool is true or false.
 var aBoolean = true
@@ -48,12 +49,12 @@ aBoolean = false
 
 // Character type must be specified in declaration
 // Otherwise, String type is inferred
-var aChar: Character = "C"
+var aChar:Character = "C"
 print(type(of: aChar))
 // aChar = "Cannot assign to string"
 
 // String
-var aString = "Hello once more"
+var aString:String = "Hello once more"
 // aString = aString + anotherInt
 aString = aString + String(anotherInt)
 
@@ -71,9 +72,11 @@ name.characters.count
 
 // Tuples group multiple values using any value type
 let http404Error = (statusCode: 404, statusMsg: "Not Found")
-let (statusCode, statusMsg) = http404Error
-print(statusCode)
-print(statusMsg)
+
+var (statusCodeVar, statusMsgVar) = http404Error
+print(statusCodeVar)
+print(statusMsgVar)
+
 http404Error.0
 http404Error.1
 http404Error.statusCode
@@ -116,7 +119,7 @@ a == b
 a != b
 a < b
 a > b
-a > b ? "a greater than b" : "a less than b"
+(a > b) ? "a greater than b" : "a less than b"
 
 // Logical
 let aBool = true
@@ -125,7 +128,13 @@ aBool && bBool
 aBool || bBool
 !bBool
 
+// Bitwise
+var Int1 = 1
+var Int2 = 2
+Int1 & Int2
+Int1 ^ Int2
+
 // Nil-Coalescing for optionals
-var optionalInt: Int? = 11
+var optionalInt: Int?
 let defaultValue = 10
 optionalInt ?? defaultValue

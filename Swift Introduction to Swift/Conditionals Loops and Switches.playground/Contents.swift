@@ -7,7 +7,7 @@ import UIKit
 // Conditionals
 //-------------------------------------------------------------------
 var temperatureInFahrenheit = 31
-if temperatureInFahrenheit <= 32 {
+if (temperatureInFahrenheit <= 32) {
     print("Water freezing")
 } else if temperatureInFahrenheit > 32 &&
     temperatureInFahrenheit < 212 {
@@ -16,7 +16,7 @@ if temperatureInFahrenheit <= 32 {
     print("Water is boiling")
 }
 
-var optionalName: String? = "Name"
+var optionalName: String? // = "Name"
 var greeting = "Hello!"
 if let name = optionalName {
     greeting = "Hello, \(name)"
@@ -93,9 +93,9 @@ print(index)
 // switches
 //-------------------------------------------------------------------
 // First match wins, no fallthroughs
-index = 5
+index = 25
 switch index {
-case 5 :
+case 1...10,25 :
     print("Value of index is 5")
     // Force fallthrough to next case
     fallthrough
@@ -130,7 +130,7 @@ default:
 }
 
 // Use value binding in case
-let anotherPoint = (2, 2)
+let anotherPoint = (2, 0)
 switch anotherPoint {
 case (let x, 0):
     print("x is set to \(x) because 2nd value is 0")

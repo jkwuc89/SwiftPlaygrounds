@@ -16,7 +16,9 @@ print(stringArray)
 
 // Create arrays using literals
 var shoppingList = ["Eggs", "Milk"]
+print(type(of: shoppingList))
 var floatArray: [Float] = [1.1, 2.2, 3.3]
+print(type(of: floatArray))
 
 // Create an array with a default value
 var intArray = Array(repeating: 0, count: 5)
@@ -67,26 +69,33 @@ var airports = [
     "CMH": "Columbus",
     "CVG": "Cincinnati"
 ]
+print(type(of: airports))
 
 // Accessing and modifying a dictionary
 airports.count
 airports.isEmpty
 airports["CLE"] = "Cleveland"
+airports.count
 airports
 airports.updateValue("Dallas", forKey: "DFW")
+airports.count
 airports["DFW"]
 airports.updateValue("Dallas/Ft. Worth", forKey: "DFW")
+airports.count
 airports["DFW"]
 airports["CMH"] = nil
 airports["CMH"]
+airports.count
 airports.removeValue(forKey: "CVG")
+airports.count
 airports["CVG"]
 for(airportCode, airportName) in airports {
     print("\(airportCode) = \(airportName)")
 }
 for airportCode in airports.keys {
-    print(airports[airportCode])
+    // Notice use of ! because airportCode key may not exist
+    print(airports[airportCode]!)
 }
 for airportValue in airports.values {
-    airportValue
+    print(airportValue)
 }

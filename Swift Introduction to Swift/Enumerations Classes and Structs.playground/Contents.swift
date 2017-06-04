@@ -41,13 +41,26 @@ enum Barcode {
 }
 
 var productBarcode = Barcode.upc(8, 85909, 51226, 3)
-productBarcode = .qrCode("ABCDEFGHIJKLMNOP")
+productBarcode = Barcode.upc(1, 2, 3, 4)
+var productBarcode2 = Barcode.upc(1, 2, 3, 4)
+
+// productBarcode = .qrCode("ABCDEFGHIJKLMNOP")
 switch productBarcode {
+// Case for any UPC barcode
+case .upc:
+    print("UPC: \(productBarcode)")
+// Case for any QR code
+case .qrCode:
+    print("QR Code: \(productBarcode)")
 // let's below capture associated values
 case .upc(let numberSystem, let manufacturer, let product, let check):
     print("UPC: \(numberSystem), \(manufacturer), \(product), \(check).")
 case .qrCode(let productCode):
     print("QR code: \(productCode).")
+case .upc(1, _, _, _):
+    print("UPC code with 1")
+default:
+    break
 }
 
 // Raw values are defined in the enum, can use any type and cannot change
@@ -61,7 +74,8 @@ print(controlChar.rawValue)
 
 // Set initial raw value for 1st case in enum
 enum Planet: Int {
-    case mercury = 1, venus, earth, mars, jupiter, saturn, uranus, neptune
+    case mercury = 1
+    case venus, earth, mars, jupiter, saturn, uranus, neptune
 }
 let planet = Planet.mars
 print(planet.rawValue)
@@ -78,26 +92,25 @@ class Beer {
     // Static property
     static var maxAbv: Float = 12
     
-    // Static method
-    static func getMaxAbv() -> Float {
-        return maxAbv
-    }
-    
-    // Initializer - Needed if properties don't define initial values
-    init() {
-        abv = 0.0
-    }
-    
     enum Size: Int {
-       case empty = 0,
-            taster = 4,
-            bottle = 12,
-            pint = 16,
-            bomber = 22,
-            growler = 64
+        case empty = 0,
+        taster = 4,
+        bottle = 12,
+        pint = 16,
+        bomber = 22,
+        growler = 64
     }
     
     // Properties
+    var abv: Float {
+        // Property observers
+        willSet(newAbv) {
+            print("Beer: Setting abv to \(newAbv)")
+        }
+        didSet {
+            print("Beer: Did set abv to \(abv)")
+        }
+    }
     var size: Size = .empty
     var sizeInOunces: Int {
         get {
@@ -113,19 +126,19 @@ class Beer {
         }
     }
     
+    // Initializer - Needed if properties don't define initial values
+    init() {
+        abv = 0.0
+    }
+    
     // Initializer with argument
     init(abv: Float) {
         self.abv = abv
     }
-    
-    var abv: Float {
-        // Property observers
-        willSet(newAbv) {
-            print("Beer: Setting abv to \(newAbv)")
-        }
-        didSet {
-            print("Beer: Did set ave to \(abv)")
-        }
+
+    // Static method
+    static func getMaxAbv() -> Float {
+        return maxAbv
     }
     
     // Methods

@@ -22,6 +22,8 @@ func exists(_: String) -> Bool {
 }
 
 func readFile(filename: String) throws -> Data? {
+    let file = FileHandle(forReadingAtPath: filename)
+
     guard exists(filename) else {
         // Executed file file does not exist
         throw FileError.doesNotExist
@@ -32,7 +34,6 @@ func readFile(filename: String) throws -> Data? {
         file?.closeFile()
     }
     
-    let file = FileHandle(forReadingAtPath: filename)
     let data = file?.readDataToEndOfFile()
     
     return data;
@@ -40,6 +41,7 @@ func readFile(filename: String) throws -> Data? {
 
 let filename = "data.txt"
 var data: Data?
+
 do {
     try data = readFile(filename: filename)
 } catch FileError.doesNotExist {

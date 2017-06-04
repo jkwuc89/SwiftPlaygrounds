@@ -17,7 +17,7 @@ func hello(person: String) -> String {
     let greeting = "Hello \(person)"
     return greeting
 }
-hello(person:"Sam")
+hello(person: "Sam")
 
 // Multiple arguments
 func printStatus(code: Int, message: String) {
@@ -29,10 +29,13 @@ printStatus(code: http404Error.statusCode, message: http404Error.statusMsg)
 // Multiple return values using tuples
 func getStatus() -> (code: Int, msg: String, description: String) {
     let status =
-        (code: 404, msg: "Not found", description: "The resource cannot be found")
+        (code: 404,
+         msg: "Not found",
+         description: "The resource cannot be found")
     return status;
 }
 print(getStatus())
+var returnedTuple = getStatus();
 
 // Default argument value
 func greeting(person: String = "Unknown") {
@@ -99,9 +102,7 @@ beers.sort() {
 }
 
 // If closure is only argument, eliminate the parens
-beers.sort {
-    $0 > $1
-}
+beers.sort{$0>$1}
 
 // NOTE: Closures capture contants and variables from outer context
 // and can modify captured variables
