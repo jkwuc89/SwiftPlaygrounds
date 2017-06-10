@@ -41,6 +41,8 @@ print(type(of: anotherDouble))
 // No implied number conversions
 let sum = Double(anInt) + aDouble
 print(type(of: sum))
+let doubleSum = aFloat + Float(aDouble)
+print(type(of: doubleSum))
 
 // Bool is true or false.
 var aBoolean = true
