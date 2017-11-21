@@ -44,7 +44,7 @@ var productBarcode = Barcode.upc(8, 85909, 51226, 3)
 productBarcode = Barcode.upc(1, 2, 3, 4)
 var productBarcode2 = Barcode.upc(1, 2, 3, 4)
 
-// productBarcode = .qrCode("ABCDEFGHIJKLMNOP")
+productBarcode = .qrCode("ABCDEFGHIJKLMNOP")
 switch productBarcode {
 // Case for any UPC barcode
 case .upc:

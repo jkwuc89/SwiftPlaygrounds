@@ -98,7 +98,7 @@ switch index {
 case 1...10,25 :
     print("Value of index is 5")
     // Force fallthrough to next case
-    fallthrough
+    // fallthrough
 // Range case
 case 1...10 :
     print("Value is between 1 and 10")
@@ -137,7 +137,7 @@ case (let x, 0):
 case (0, let y):
     print("y is set to \(y) because 1st value is 0")
 case let (x, y):
-    print("x and y are set which covers default case")
+    print("x and y are set to (\(x), \(y)) which covers default case")
 }
 
 // Use where clause in case
@@ -148,5 +148,5 @@ case let (x, y) where x == y:
 case let (x, y) where x == -y:
     print("x == -y")
 case let (x, y):
-    print("x and y are not equal")
+    print("x(\(x)) and y(\(y)) are not equal")
 }

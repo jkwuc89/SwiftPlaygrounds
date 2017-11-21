@@ -4,7 +4,7 @@
 import UIKit
 
 // The obligatory Hello World
-print("Hello World!")
+print("Hello World Beer City Code")
 
 //-------------------------------------------------------------------
 // Variables and Constants

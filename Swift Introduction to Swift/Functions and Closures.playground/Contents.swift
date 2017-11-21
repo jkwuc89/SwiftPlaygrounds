@@ -51,6 +51,7 @@ greeting(person: "Phil")
 // Variable number of arguments, can have at most 1
 func sum(numbers: Int...) -> Int {
     var total: Int = 0
+    print(type(of: numbers))
     for number in numbers {
         total += number
     }
